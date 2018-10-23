@@ -64,7 +64,7 @@ class FileWriter:
 
 
     def save_yourself(self, file_name):
-        data = {'path': self._path}
+        data = {'file': self}
         with open(file_name, 'wb') as file:
             pkl.dump(data, file)
 
