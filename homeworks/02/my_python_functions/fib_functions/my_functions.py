@@ -6,7 +6,7 @@ def simple_decorator(function):
             return function(arg)
     return check_func
 
-
+    
 @simple_decorator
 def fib(n):
     if n == 0 : 
