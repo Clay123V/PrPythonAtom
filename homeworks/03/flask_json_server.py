@@ -14,8 +14,15 @@ def return_classifier_result(version):
 
 @app.route("/")
 def hello():
-    #TODO должна возвращатьс инструкция по работе с сервером
-    return
+    return """Серверу нужно отправить запрос  requests.post(url, data, headers)
+     URL  вида url/get_classifier_result/<version>, где <version> - '1' - новая    или '0' - старая версия 
+     Требуется отправить файл в формате json.
+     {"predict" : i} - при <version> - '1', 
+     {"old_predict": i} при <version> - '0'
+     Ответом на запрос будет dict:
+     {"version" : value, "predict" : value}
+     На ['version'] возвращается 1 или 0, на ['predict'] отправленное значение 
+     """
 
 if __name__ == "__main__":
     app.run()
