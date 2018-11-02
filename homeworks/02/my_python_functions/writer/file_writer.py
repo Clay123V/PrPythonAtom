@@ -64,12 +64,13 @@ class FileWriter:
 
 
     def save_yourself(self, file_name):
-        with open(file_name,'wb') as file:
-            pkl.dump(FileWriter(self._path), file)
+        data = {'file': self}
+        with open(file_name, 'wb') as file:
+            pkl.dump(data, file)
 
 
     @classmethod
     def load_file_writer(cls, pickle_file):
         with open(pickle_file, 'rb') as file:
-            return (pkl.load(file))
-
+            data = pkl.load(file)
+        return
